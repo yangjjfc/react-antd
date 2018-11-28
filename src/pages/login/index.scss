@@ -1,0 +1,43 @@
+.auth_box {
+    background: #f0f2f5;
+    background-image: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include flex;
+    flex-direction: column;
+    .auth_title {
+        font-size: 38px;
+        text-align: center;
+        color: #f00;
+        text-shadow: 0px 0px 2px #FF0000;
+        letter-spacing: 0.1em;
+    }
+
+    .auth_form {
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+        width: 410px;
+        margin: 20px auto;
+        padding: 30px 30px 0;
+        background: #fff;
+
+        .imageCode {
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        .errorMsg {
+            margin-bottom: 24px;
+        }
+
+        .login-form-forgot {
+            float: right;
+        }
+    }
+
+    .button {
+        width: 100%
+    }
+}

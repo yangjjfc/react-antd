@@ -1,0 +1,30 @@
+.err{
+    height: 500px;
+    .bg{
+        height:500px;
+        background: url(https://gw.alipayobjects.com/zos/rmsportal/KpnpchXsobRgLElEozzI.svg) no-repeat 70% center;
+        background-size: 60% 60%;
+    }
+    &-right{
+        height:500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .name{
+            color: #434e59;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 72px;
+            margin-bottom: 24px;
+        }
+        .info{
+            color: rgba(0,0,0,.45);
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 16px;
+        }
+    }
+   
+
+}

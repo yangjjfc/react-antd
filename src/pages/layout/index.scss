@@ -1,0 +1,66 @@
+.layout-container {
+    height: 100vh;
+    width: 100%;
+    .drawer-bg{
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background: rgba(0, 0, 0, .6);
+        z-index: 6;
+    }
+    .layout-sider {
+        width: $sider-width;
+        position: fixed !important;
+        height: 100%;
+        overflow: auto;
+        left: 0;
+        z-index: 9;
+        background: $sider-menu;
+        transition: all .2s;
+        &.is-collapsed{
+            width: $sider-width-collapsed;
+        }
+        &.isMobile{
+            left: - $sider-width-collapsed;
+        }
+        .logo {
+            height: 32px;
+            background: rgba(255, 255, 255, .2);
+            margin: 16px;
+            font-size: 22px;
+            @include flex;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+    &-right {
+        margin-left: $sider-width;
+        &.retraction {
+            margin-left: $sider-width-collapsed;
+            transition: all .2s;
+        }
+        &.isMobile{
+            margin-left:0 !important;
+        }
+        .layout-header {
+            background: #fff;
+            padding: 0;
+        }
+        .icons {
+            font-size: 18px;
+            line-height: 64px;
+            padding: 0 24px;
+            cursor: pointer;
+            transition: color .3s;
+            &:hover {
+                color: #1890ff;
+            }
+        }
+        .userinfo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}
