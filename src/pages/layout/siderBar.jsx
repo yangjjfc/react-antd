@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
-import * as actions from '@/store/action/index';
+import actions from '@/store/action/index';
 import { Scrollbars } from 'react-custom-scrollbars';
 import CSSModules from 'react-css-modules';
 import styles from './index.scss';
@@ -64,32 +64,36 @@ class SiderBar extends React.Component {
           keys: defaultOpenKeys,
           menus: $menu
       };
-  };
+  }
     handleToggle = () => {
         if (this.props.app.device === 'mobile') {
             this.props.toggle();
         }
     }
+    setSiderClass = () => {
+        const {collapsed,device}=this.props.app;
+        let className = '';
+        if (collapsed) {
+            if (device === 'mobile') {
+                className = 'layout-sider is-collapsed isMobile';
+            } else {
+                className = 'layout-sider is-collapsed';
+            }
+        } else {
+            className = 'layout-sider';
+        }
+        return className;
+    }
     render () {
         const { menu } = this.props.permission;
         const {collapsed,device}=this.props.app;
         const { keys, menus } = this.renderMenu(menu);
-        let class_closed = '';
-        if (collapsed) {
-            if (device === 'mobile') {
-                class_closed = 'layout-sider is-collapsed isMobile';
-            } else {
-                class_closed = 'layout-sider is-collapsed';
-            }
-        } else {
-            class_closed = 'layout-sider';
-        }
+        
      
         return (
             <div onClick={this.handleToggle}>
                 {(device === 'mobile' && !collapsed) ? <div styleName="drawer-bg"></div> : null}
-                <Scrollbars autoHide autoHideTimeout={500} styleName={class_closed}>
-                    
+                <Scrollbars autoHide autoHideTimeout={500} styleName={this.setSiderClass()}>
                     <Sider
                         trigger={null}
                         collapsible={true}

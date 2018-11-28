@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import $http from '@/utils/axios/index';
 import encryption from '@/utils/custom/encryption';
-import * as actions from '@/store/action/index';
+import actions from '@/store/action/index';
 import { Form, Icon, Input, Button, Checkbox, Row, Col, Alert } from 'antd';
 import CSSModules from 'react-css-modules';
 import styles from './index.scss';
@@ -11,8 +11,8 @@ const { getUser, setUser, setPathName } = actions;
 const FormItem = Form.Item;
 
 const mapStateToProps = state => ({
-    token: state.currentUser.token,
-    clientId: state.currentUser.clientId
+    token: state.user.token,
+    clientId: state.user.clientId
 });
 
 @withRouter

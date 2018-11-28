@@ -1,54 +1,12 @@
 import { combineReducers } from 'redux';
-import * as ActionType from '../action-types';
+import {default as user }  from '../action/user';
+import {default as permission } from '../action/permission';
+import {default as app } from '../action/app';
 
-const currentUser = (state = {}, action) => {
-    switch (action.type) {
-    case ActionType.USER_INFO:
-        return { ...action.msg };
-    default:
-        return state;
-    }
-};
 
-const defaultState = {
-    menu: [],
-    button: []
-};
-const permission = (state = defaultState, action) => {
-    switch (action.type) {
-    case ActionType.USER_MENU:
-    case ActionType.USER_BUTTON_PERMISSION:
-        return { ...state, ...{ [action.datatype]: action.msg } };
-    default:
-        return state;
-    }
-};
-const routers = (state = {}, action) => {
-    switch (action.type) {
-    case ActionType.USER_PATHNAME:
-        return { ...state, ...action.msg };
-    default:
-        return state;
-    }
-};
-
-const defaultState_app = {
-    collapsed: false, // false,展开 true,缩起
-    device: 'desktop'
-};
-const app = (state = defaultState_app, action) => {
-    switch (action.type) {
-    case ActionType.USER_EXPANSION:
-    case  ActionType.USER_DEVICE:
-        return { ...state, ...action.msg };
-    default:
-        return state;
-    }
-};
 const rootReducer = combineReducers({
-    currentUser,
+    user,
     permission,
-    routers,
     app
 });
 

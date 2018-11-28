@@ -18,7 +18,7 @@ new Interceptor(TimeOut); // eslint-disable-line no-new
  * @param {*} header 添加头部信息
  */
 const Http = async (url, data = {}, header = {}, type = 'post') => {
-    const { currentUser } = store.getState();
+    const { user } = store.getState();
     let headers = {
         'X-Requested-With': 'XMLHttpRequest',
         'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const Http = async (url, data = {}, header = {}, type = 'post') => {
         ...header
     };
     // 添加header token
-    const token = currentUser.token || '';
+    const token = user.token || '';
     if (token) {
         headers = Object.assign(headers, { jtoken: token });
     }

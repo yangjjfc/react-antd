@@ -23,7 +23,7 @@ module.exports = {
     "no-mixed-requires": 2,
     "no-mixed-spaces-and-tabs": 2,
     "linebreak-style": [0, "windows"],
-    "no-multiple-empty-lines": 2,
+    "no-multiple-empty-lines": 0,
     "no-negated-in-lhs": 2,
     "no-new-require": 2,
     "no-obj-calls": 2,

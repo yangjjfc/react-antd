@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '@/store/action/index';
+import actions from '@/store/action/index';
 import asyncComponents from '@/components/asyncComponents';
 const Login = asyncComponents('login');
 const Layout = asyncComponents('layout');
@@ -40,7 +40,6 @@ class Beforerouter extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-    routerState: state.routers,
     permission: state.permission
 });
 
